@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View, Platform } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { Constants, Location, Permissions } from 'expo';
 
 export default class LinksScreen extends React.Component {
@@ -11,6 +11,11 @@ export default class LinksScreen extends React.Component {
   state = {
     location: null,
     errorMessage: null,
+    markers: [{
+      latlng: { "latitude": 28.6931858, "longitude": 77.1501815 },
+      title: "adil",
+      description: "dadsdas"
+    }]
   };
 
   componentWillMount() {
@@ -27,7 +32,7 @@ export default class LinksScreen extends React.Component {
     let { status } = await Permissions.askAsync(Permissions.LOCATION);
     if (status !== 'granted') {
       this.setState({
-        errorMessage: 'Permission to access location was denied',
+        errorMessage: 'Permission to access location was',
       });
     }
 
@@ -36,19 +41,31 @@ export default class LinksScreen extends React.Component {
     this.setState({ location });
   };
   render() {
-
-    return (
+   return (
 
       <View style={styles.container}>
         <MapView
           style={styles.map}
           initialRegion={{
-            latitude: 50.0517273,
-            longitude: 14.4286503,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421
+            latitude: 28.6931858,
+            longitude: 77.1501815,
+            latitudeDelta: 0,
+            longitudeDelta: 0.02
           }}
-        />
+        >
+          {this.state.markers.map((marker) => {
+            return (
+              <Marker
+                key={marker.title}
+              
+                coordinate={marker.latlng}
+                title={marker.title}
+                image={require('../assets/images/light-green.png')}
+                description={marker.description}
+              />
+            )
+          })}
+        </MapView>
       </View>
     );
   }
