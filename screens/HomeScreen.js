@@ -44,25 +44,8 @@ export default class HomeScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-        <Header
-          leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent={{ text: 'RSM App', style: { color: '#fff' } }}
-          rightComponent={{ icon: 'home', color: '#fff' }}
-        />
-        <Card containerStyle={{ padding: 0 }} >
-          {
-            users.map((u, i) => {
-              
-              return (
-                <ListItem
-                  key={i}
-                  title={u.title}
-                  avatar={{ uri: u.avatar_url }}
-                />
-              );
-            })
-          }
-        </Card>
+
+       
       </View>
     );
   }
@@ -77,14 +60,14 @@ export default class HomeScreen extends React.Component {
 
       return (
         <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will be slower but you can use useful development
+          Development mode is enabled, your app will be slower
           tools. {learnMoreButton}
         </Text>
       );
     } else {
       return (
         <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
+          You are not in development mode, your
         </Text>
       );
     }

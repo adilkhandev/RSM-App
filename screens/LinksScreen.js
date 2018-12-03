@@ -1,25 +1,28 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet , View} from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 import MapView from 'react-native-maps';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
-    title: 'Maps',
+    header: null,
   };
 
   render() {
+
     return (
-      <ScrollView style={styles.container}>
+
+      <View style={styles.container}>
         <MapView
-          initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
+          style={styles.map}
+          initialRegion={{ // initial region set to Bileto
+            latitude: 50.0517273,
+            longitude: 14.4286503,
             latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
+            longitudeDelta: 0.0421
           }}
         />
-      </ScrollView>
+      </View>
     );
   }
 }
@@ -30,4 +33,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     backgroundColor: '#fff',
   },
+  map: {
+    flex: 1,
+  }
 });

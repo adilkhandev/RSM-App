@@ -311,6 +311,9 @@
       android:name="com.google.firebase.messaging.default_notification_icon"
       android:resource="@drawable/shell_notification_icon" />
     <meta-data
+      android:name="com.google.android.geo.API_KEY"
+      android:value="AIzaSyBC3zGRl-HU4TyB6q6V51udvDjf_KE9Mo8"/>
+    <meta-data
       android:name="com.google.firebase.messaging.default_notification_color"
       android:resource="@color/colorAccent" />
     <service

@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import expolib_v1.okhttp3.OkHttpClient;
+import com.airbnb.android.react.maps.MapsPackage;
 
 // Needed for `react-native link`
 // import com.facebook.react.ReactApplication;
@@ -25,7 +26,8 @@ public class MainApplication extends ExpoApplication {
         // TODO: add native modules!
 
         // Needed for `react-native link`
-        // new MainReactPackage()
+        new MainReactPackage(),
+        new MapsPackage()
     );
   }
 

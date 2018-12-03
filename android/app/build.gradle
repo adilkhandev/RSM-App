@@ -122,6 +122,9 @@ dependencies {
   implementation 'com.google.android.gms:play-services-auth:15.0.1'
   implementation 'com.google.android.gms:play-services-location:15.0.1'
   implementation 'com.google.android.gms:play-services-ads:15.0.1'
+   implementation (project(':react-native-maps')){
+        exclude group: 'com.google.android.gms'
+    }
   annotationProcessor 'com.raizlabs.android:DBFlow-Compiler:2.2.1'
   implementation "com.raizlabs.android:DBFlow-Core:2.2.1"
   implementation "com.raizlabs.android:DBFlow:2.2.1"

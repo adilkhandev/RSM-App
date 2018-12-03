@@ -3,6 +3,7 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 import MapView from 'react-native-maps';
+import { Header } from 'react-native-elements';
 
 export default class App extends React.Component {
   state = {
@@ -21,6 +22,11 @@ export default class App extends React.Component {
     } else {
       return (
         <View style={styles.container}>
+          <Header
+            leftComponent={{ icon: 'menu', color: '#fff' }}
+            centerComponent={{ text: 'RSM App', style: { color: '#fff' } }}
+            rightComponent={{ icon: 'home', color: '#fff' }}
+          />
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           <AppNavigator />
         </View>
