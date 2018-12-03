@@ -5,7 +5,7 @@ import MapView from 'react-native-maps';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
-    title: 'Links',
+    title: 'Maps',
   };
 
   render() {
