@@ -23,15 +23,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+     "bundleIdentifier": "com.yourcompany.yourappname"
     },
-    "isDetached": true,
+    "isDetached": false,
     "detach": {
       "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.9.2-sdk31.0.0-d1776f37-d524-4fee-872d-6807b0fd83ff.tar.gz"
     },
     "scheme": "expa1c8874247794e36853bbcfd44fca050",
     "android": {
-      "package": "RSM1.com",
+      "package": "com.yourcompany.yourappname",
       "publishBundlePath": "android\\app\\src\\main\\assets\\shell-app.bundle",
       "publishManifestPath": "android\\app\\src\\main\\assets\\shell-app-manifest.json"
     }
